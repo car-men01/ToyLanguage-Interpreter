@@ -3,6 +3,7 @@ package model.statements;
 import model.state.PrgState;
 import model.exceptions.MyException;
 import model.expressions.IExp;
+import model.values.IValue;
 
 public class PrintStmt implements IStmt{
     private IExp exp;
@@ -16,8 +17,8 @@ public class PrintStmt implements IStmt{
     }
 
     public PrgState execute(PrgState state) throws MyException {
-        //IValue val = expression.evaluate(state.getSymTable());
-        //state.getOutputList().add(val.toString());
+        IValue val = exp.eval(state.getSymTable());
+        state.getOut().add(val); // val.toString();
 
         return state;
     }

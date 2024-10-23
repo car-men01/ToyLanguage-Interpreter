@@ -1,7 +1,13 @@
 package model.statements;
+import model.adt.MyIDictionary;
 import model.state.PrgState;
 import model.exceptions.MyException;
 import model.expressions.IExp;
+import model.values.IValue;
+import model.values.BoolValue;
+import model.types.BoolType;
+import model.exceptions.StatementException;
+
 
 public class IfStmt implements IStmt{
     private IExp exp;
@@ -14,21 +20,22 @@ public class IfStmt implements IStmt{
         this.elseS=elseS;
     }
     public String toString() {
-        return "(IF("+ exp.toString()+") THEN(" +thenS.toString() +")ELSE("+elseS.toString()+"))";
+        return "(IF(" + exp.toString() + ") THEN(" + thenS.toString() + ")ELSE(" + elseS.toString() + "))";
     }
     public PrgState execute(PrgState state) throws MyException {
-        /*
-        IValue val = condition.evaluate(state.getSymTable());
+        MyIDictionary<String, IValue> symTable = state.getSymTable();
+        IValue val = this.exp.eval(symTable);
+
         if(!val.getType().equals(new BoolType())){
             throw new StatementException("The condition is not a boolean");
         }
-        if(((BoolValue)val).getValue())
+        if(((BoolValue)val).getVal())
         {
-            state.getExecStack().push(thenStatement);
+            state.getStack().push(thenS);
         }
         else
-            state.getExecStack().push(elseStatement);
-         */
+            state.getStack().push(elseS);
+
         return state;
     }
 

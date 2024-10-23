@@ -1,17 +1,28 @@
 package model.adt;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyList<T> implements MyIList<T>{
+    private List<T> list;
 
-
-    @Override
-    public void add(T e) {
-
+    public MyList() {
+        this.list = new ArrayList<>();
     }
 
-    @Override
+    public void add(T e) {
+        this.list.add(e);
+    }
+
     public List<T> getAll() {
-        return List.of();
+        return this.list;
+    }
+
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (T elem : this.list) {
+            s.append(elem).append(" ");
+        }
+        return s.toString();
     }
 }
