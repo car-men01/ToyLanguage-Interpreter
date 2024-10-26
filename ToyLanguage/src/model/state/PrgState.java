@@ -17,7 +17,7 @@ public class PrgState {
         this.exeStack = exeStack;
         this.symTable = symTable;
         this.outList = outList;
-        //originalProgram = deepCopy(prg);//recreate the entire original prg
+        //originalProgram = program.deepCopy();//recreate the entire original prg
         exeStack.push(program);
     }
 
