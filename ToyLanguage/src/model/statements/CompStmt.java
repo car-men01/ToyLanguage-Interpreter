@@ -1,7 +1,7 @@
 package model.statements;
 import model.state.PrgState;
 import model.adt.MyIStack;
-import model.exceptions.MyException;
+import exceptions.MyException;
 
 public class CompStmt implements IStmt {
     private IStmt first;
@@ -16,10 +16,14 @@ public class CompStmt implements IStmt {
         return "(" + first.toString() + ";" + second.toString() + ")";
     }
 
-    public PrgState execute(PrgState state) throws MyException{
+    public PrgState execute(PrgState state) {
         MyIStack<IStmt> stack = state.getStack();
         stack.push(second);
         stack.push(first);
         return state;
+    }
+
+    public IStmt deepcopy() {
+        return new CompStmt(first.deepcopy(), second.deepcopy());
     }
 }

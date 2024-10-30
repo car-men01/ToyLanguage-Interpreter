@@ -1,6 +1,6 @@
 package model.adt;
 
-import model.exceptions.EmptyStackException;
+import exceptions.EmptyStackException;
 
 public interface MyIStack<T> {
     T pop() throws EmptyStackException;

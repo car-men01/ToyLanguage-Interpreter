@@ -1,7 +1,6 @@
 package model.expressions;
 
 import model.adt.MyIDictionary;
-import model.exceptions.MyException;
 import model.values.IValue;
 
 public class ValueExp implements IExp {
@@ -17,5 +16,9 @@ public class ValueExp implements IExp {
 
     public String toString() {
         return value.toString();
+    }
+
+    public IExp deepcopy() {
+        return new ValueExp(value.deepcopy());
     }
 }

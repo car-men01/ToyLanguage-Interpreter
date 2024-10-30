@@ -1,6 +1,6 @@
 package model.adt;
 
-import model.exceptions.KeyNotFoundException;
+import exceptions.KeyNotFoundException;
 
 import java.util.HashMap;
 import java.util.Map;

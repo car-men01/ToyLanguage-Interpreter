@@ -4,4 +4,5 @@ import model.values.IValue;
 
 public interface IType {
     public IValue getDefaultValue();
+    IType deepcopy();
 }

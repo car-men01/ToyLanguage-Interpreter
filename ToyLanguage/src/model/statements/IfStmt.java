@@ -1,12 +1,12 @@
 package model.statements;
 import model.adt.MyIDictionary;
 import model.state.PrgState;
-import model.exceptions.MyException;
+import exceptions.MyException;
 import model.expressions.IExp;
 import model.values.IValue;
 import model.values.BoolValue;
 import model.types.BoolType;
-import model.exceptions.StatementException;
+import exceptions.StatementException;
 
 
 public class IfStmt implements IStmt{
@@ -19,9 +19,11 @@ public class IfStmt implements IStmt{
         this.thenS=thenS;
         this.elseS=elseS;
     }
+
     public String toString() {
-        return "(IF(" + exp.toString() + ") THEN(" + thenS.toString() + ")ELSE(" + elseS.toString() + "))";
+        return "(IF(" + exp.toString() + ") THEN (" + thenS.toString() + ")ELSE(" + elseS.toString() + "))";
     }
+
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, IValue> symTable = state.getSymTable();
         IValue val = this.exp.eval(symTable);
@@ -37,6 +39,10 @@ public class IfStmt implements IStmt{
             state.getStack().push(elseS);
 
         return state;
+    }
+
+    public IStmt deepcopy() {
+        return new IfStmt(exp.deepcopy(), thenS.deepcopy(), elseS.deepcopy());
     }
 
 }

@@ -1,7 +1,8 @@
 package model.expressions;
 
+import exceptions.TypeException;
 import model.adt.MyIDictionary;
-import model.exceptions.MyException;
+import exceptions.MyException;
 import model.values.BoolValue;
 import model.values.IValue;
 import model.types.BoolType;
@@ -30,8 +31,12 @@ public class LogicExp implements IExp{
                 n2 = i2.getVal();
                 if (op==1) return new BoolValue(n1&&n2);
                 if (op==2) return new BoolValue(n1||n2);
-            } else throw new MyException("second operand is not a boolean");
-        } else throw new MyException("first operand is not a boolean");
+            } else throw new TypeException("second operand is not a boolean");
+        } else throw new TypeException("first operand is not a boolean");
         return null;
+    }
+
+    public IExp deepcopy() {
+        return new LogicExp(e1.deepcopy(), e2.deepcopy(), op);
     }
 }

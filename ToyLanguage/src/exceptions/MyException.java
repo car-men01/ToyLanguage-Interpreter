@@ -1,4 +1,4 @@
-package model.exceptions;
+package exceptions;
 import java.lang.Exception;
 
 public class MyException extends Exception {

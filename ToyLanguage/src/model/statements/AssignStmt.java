@@ -1,10 +1,12 @@
 package model.statements;
+import exceptions.KeyNotFoundException;
+import exceptions.MyException;
 import model.state.PrgState;
-import model.exceptions.MyException;
 import model.expressions.IExp;
 import model.adt.*;
 import model.values.IValue;
 import model.types.IType;
+import exceptions.StatementException;
 
 public class AssignStmt implements IStmt{
     private String id;
@@ -17,7 +19,7 @@ public class AssignStmt implements IStmt{
     public String toString() {
         return id + "=" + exp.toString();
     }
-    public PrgState execute(PrgState state) throws MyException{
+    public PrgState execute(PrgState state) throws MyException {
         MyIStack<IStmt> stack = state.getStack();
         MyIDictionary<String,IValue> symTable= state.getSymTable();
 
@@ -27,11 +29,15 @@ public class AssignStmt implements IStmt{
             if (val.getType().equals(typId)) {
                 symTable.update(id, val);
             } else
-                throw new MyException("declared type of variable" + id + " and type of the assigned expression do not match");
+                    throw new StatementException("declared type of variable" + id + " and type of the assigned expression do not match");
         }
-        else throw new MyException("the used variable" + id + " was not declared before");
+        else throw new StatementException("the used variable" + id + " was not declared before");
 
         return state;
+    }
+
+    public IStmt deepcopy() {
+        return new AssignStmt(new String(id), exp.deepcopy());
     }
 }
 

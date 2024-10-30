@@ -1,6 +1,6 @@
 package model.state;
 
-import model.exceptions.EmptyStackException;
+import exceptions.EmptyStackException;
 import model.statements.IStmt;
 import model.adt.MyIStack;
 

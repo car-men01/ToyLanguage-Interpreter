@@ -1,10 +1,11 @@
 package model.expressions;
-
+import exceptions.DivisionByZeroException;
+import exceptions.TypeException;
 import model.values.IValue;
 import model.values.IntValue;
 import model.types.IntType;
 import model.adt.MyIDictionary;
-import model.exceptions.MyException;
+import exceptions.MyException;
 
 public class ArithExp implements IExp{
     private IExp e1;
@@ -32,11 +33,24 @@ public class ArithExp implements IExp{
                 if (op==2) return new IntValue(n1-n2);
                 if (op==3) return new IntValue(n1*n2);
                 if (op==4) {
-                    if (n2==0) throw new MyException("division by zero");
+                    if (n2==0) throw new DivisionByZeroException("division by zero");
                     return new IntValue(n1/n2);
                 }
-            } else throw new MyException("second operand is not an integer");
-        } else throw new MyException("first operand is not an integer");
+            } else throw new TypeException("second operand is not an integer");
+        } else throw new TypeException("first operand is not an integer");
         return null;
+    }
+
+    public String toString() {
+        String s = "";
+        if (op==1) s = "+";
+        if (op==2) s = "-";
+        if (op==3) s = "*";
+        if (op==4) s = "/";
+        return e1.toString() + s + e2.toString();
+    }
+
+    public IExp deepcopy() {
+        return new ArithExp(e1.deepcopy(), e2.deepcopy(), op);
     }
 }

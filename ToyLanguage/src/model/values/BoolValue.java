@@ -17,4 +17,5 @@ public class BoolValue implements IValue {
     public IType getType() {
         return new BoolType();
     }
+    public IValue deepcopy() { return new BoolValue(val); }
 }

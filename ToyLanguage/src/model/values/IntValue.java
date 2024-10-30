@@ -17,4 +17,7 @@ public class IntValue implements IValue{
     public IType getType() {
         return new IntType();
     }
+    public IValue deepcopy() {
+        return new IntValue(val);
+    }
 }

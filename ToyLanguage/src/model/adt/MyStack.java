@@ -1,7 +1,7 @@
 package model.adt;
 import java.util.Stack;
 
-import model.exceptions.EmptyStackException;
+import exceptions.EmptyStackException;
 
 public class MyStack<T> implements MyIStack<T> {
     Stack<T> stack;
@@ -27,6 +27,14 @@ public class MyStack<T> implements MyIStack<T> {
 
     public int size() {
         return this.stack.size();
+    }
+
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (T elem : this.stack) {
+            s.append(elem).append(" ");
+        }
+        return s.toString();
     }
 
     /*public MyIStack<T> getStack() {

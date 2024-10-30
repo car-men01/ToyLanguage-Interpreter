@@ -1,6 +1,6 @@
 package controller;
 import model.adt.MyIStack;
-import model.exceptions.MyException;
+import exceptions.MyException;
 import model.state.PrgState;
 import model.statements.IStmt;
 import repository.IRepo;

@@ -1,7 +1,7 @@
 package model.expressions;
 
 import model.adt.MyIDictionary;
-import model.exceptions.MyException;
+import exceptions.MyException;
 import model.values.IValue;
 
 public class VarExp implements IExp{
@@ -21,5 +21,9 @@ public class VarExp implements IExp{
 
     public String toString() {
         return id;
+    }
+
+    public IExp deepcopy() {
+        return new VarExp(new String(id));
     }
 }

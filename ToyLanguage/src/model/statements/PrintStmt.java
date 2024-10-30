@@ -1,7 +1,7 @@
 package model.statements;
 
 import model.state.PrgState;
-import model.exceptions.MyException;
+import exceptions.MyException;
 import model.expressions.IExp;
 import model.values.IValue;
 
@@ -21,5 +21,9 @@ public class PrintStmt implements IStmt{
         state.getOut().add(val); // val.toString();
 
         return state;
+    }
+
+    public IStmt deepcopy() {
+        return new PrintStmt(exp.deepcopy());
     }
 }

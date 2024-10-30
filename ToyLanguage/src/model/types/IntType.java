@@ -18,5 +18,8 @@ public class IntType implements IType {
     public String toString() {
         return "int";
     }
+    public IType deepcopy() {
+        return new IntType();
+    }
 }
 
