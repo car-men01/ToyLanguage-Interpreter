@@ -19,11 +19,11 @@ public class IfStmt implements IStmt{
         this.thenS=thenS;
         this.elseS=elseS;
     }
-
+    @Override
     public String toString() {
         return "(IF(" + exp.toString() + ") THEN (" + thenS.toString() + ")ELSE(" + elseS.toString() + "))";
     }
-
+    @Override
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, IValue> symTable = state.getSymTable();
         IValue val = this.exp.eval(symTable);
@@ -40,7 +40,7 @@ public class IfStmt implements IStmt{
 
         return state;
     }
-
+    @Override
     public IStmt deepcopy() {
         return new IfStmt(exp.deepcopy(), thenS.deepcopy(), elseS.deepcopy());
     }

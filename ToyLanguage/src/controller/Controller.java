@@ -23,10 +23,19 @@ public class Controller {
 
     public void allStep() throws MyException {
         PrgState prg = repo.getCrtPrg(); // repo is the controller field of type MyIRepo
+        /*
+        // seminar 6
+        if (prg.count > 1) {
+            prg.init();
+        }
+        prg.count++;
+         */
         this.displayPrgState();
+        repo.logPrgStateExec();
         while (!prg.getStack().isEmpty()) {
             oneStep(prg);
             this.displayPrgState();
+            repo.logPrgStateExec();
         }
     }
 

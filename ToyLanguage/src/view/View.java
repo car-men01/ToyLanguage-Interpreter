@@ -9,9 +9,11 @@ import model.types.IntType;
 import model.values.IValue;
 import model.state.PrgState;
 import model.values.IntValue;
+import model.values.StringValue;
 import repository.*;
 import controller.*;
 
+import java.io.BufferedReader;
 import java.util.Scanner;
 
 public class View {
@@ -29,11 +31,10 @@ public class View {
         System.out.println("4. Exit the program");
     }
 
-    // i add a program in main and i want to make a method here * the programs are 1,2 or 3
 
     public PrgState addProgram(IStmt stmt) {
         //MyIStack<IStmt> exeStack, MyIDictionary<String,IValue> symTable, MyIList<IValue> outList, IStmt program
-        PrgState prgState = new PrgState(new MyStack<IStmt>(), new MyDictionary<String, IValue>(), new MyList<IValue>(), stmt);
+        PrgState prgState = new PrgState(new MyStack<IStmt>(), new MyDictionary<String, IValue>(), new MyList<IValue>(), stmt, new MyDictionary<StringValue, BufferedReader>());
         return prgState;
     }
 

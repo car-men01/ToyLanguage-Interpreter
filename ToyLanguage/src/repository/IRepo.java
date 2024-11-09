@@ -1,8 +1,13 @@
 package repository;
 
+import exceptions.FileDoesNotExistException;
+import exceptions.MyException;
 import model.state.PrgState;
 
+import java.io.IOException;
+
 public interface IRepo {
-    public PrgState getCrtPrg();
-    public void addPrgState(PrgState prg);
+    PrgState getCrtPrg();
+    void addPrgState(PrgState state);
+    void logPrgStateExec() throws MyException;
 }

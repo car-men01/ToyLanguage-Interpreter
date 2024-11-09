@@ -5,25 +5,22 @@ import exceptions.MyException;
 import model.values.IValue;
 
 public class VarExp implements IExp{
-    private String id;
+    private String var;
 
-    public VarExp(String id) {
-        this.id = id;
+    public VarExp(String var) {
+        this.var = var;
     }
 
-    public String getId() {
-        return id;
-    }
-
+    @Override
     public IValue eval(MyIDictionary<String,IValue> tbl) throws MyException {
-        return tbl.lookup(id);
+        return tbl.lookup(var);
     }
-
+    @Override
     public String toString() {
-        return id;
+        return var;
     }
-
+    @Override
     public IExp deepcopy() {
-        return new VarExp(new String(id));
+        return new VarExp(new String(var));
     }
 }

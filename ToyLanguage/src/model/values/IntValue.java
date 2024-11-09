@@ -11,13 +11,19 @@ public class IntValue implements IValue{
     public int getVal() {
         return val;
     }
+    @Override
     public String toString() {
         return Integer.toString(val);
     }
+    @Override
     public IType getType() {
         return new IntType();
     }
+    @Override
     public IValue deepcopy() {
         return new IntValue(val);
+    }
+    public boolean equals(IValue val) {
+        return val.getType().equals(new IntType()) && ((IntValue)val).getVal() == this.val;
     }
 }

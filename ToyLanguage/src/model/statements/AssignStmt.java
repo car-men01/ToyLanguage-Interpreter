@@ -16,26 +16,26 @@ public class AssignStmt implements IStmt{
         this.id = id;
         this.exp = exp;
     }
+    @Override
     public String toString() {
         return id + "=" + exp.toString();
     }
+    @Override
     public PrgState execute(PrgState state) throws MyException {
-        MyIStack<IStmt> stack = state.getStack();
         MyIDictionary<String,IValue> symTable= state.getSymTable();
 
         if (symTable.contains(id)) {
             IValue val = exp.eval(symTable);
-            IType typId = (symTable.lookup(id)).getType();
-            if (val.getType().equals(typId)) {
+            IType typeId = (symTable.lookup(id)).getType();
+            if (val.getType().equals(typeId)) {
                 symTable.update(id, val);
-            } else
-                    throw new StatementException("declared type of variable" + id + " and type of the assigned expression do not match");
+            } else throw new StatementException("The type of variable " + id + " and type of the assigned expression do not match");
         }
-        else throw new StatementException("the used variable" + id + " was not declared before");
+        else throw new StatementException("The used variable " + id + " was not declared before");
 
         return state;
     }
-
+    @Override
     public IStmt deepcopy() {
         return new AssignStmt(new String(id), exp.deepcopy());
     }

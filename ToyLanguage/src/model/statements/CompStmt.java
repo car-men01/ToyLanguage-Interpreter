@@ -11,18 +11,18 @@ public class CompStmt implements IStmt {
         this.first = first;
         this.second = second;
     }
-
+    @Override
     public String toString() {
         return "(" + first.toString() + ";" + second.toString() + ")";
     }
-
+    @Override
     public PrgState execute(PrgState state) {
         MyIStack<IStmt> stack = state.getStack();
         stack.push(second);
         stack.push(first);
         return state;
     }
-
+    @Override
     public IStmt deepcopy() {
         return new CompStmt(first.deepcopy(), second.deepcopy());
     }

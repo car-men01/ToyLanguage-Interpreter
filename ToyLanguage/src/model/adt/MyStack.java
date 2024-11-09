@@ -37,10 +37,4 @@ public class MyStack<T> implements MyIStack<T> {
         return s.toString();
     }
 
-    /*public MyIStack<T> getStack() {
-        MyStack<T> copy = new MyStack<>();
-        copy.stack = (Stack<T>) this.stack.clone();
-        return copy;
-    }*/
-
 }
