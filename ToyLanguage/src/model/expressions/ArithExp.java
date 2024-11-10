@@ -43,10 +43,10 @@ public class ArithExp implements IExp{
     @Override
     public String toString() {
         String s = "";
-        if (op==1) s = "+";
-        if (op==2) s = "-";
-        if (op==3) s = "*";
-        if (op==4) s = "/";
+        if (op==1) s = " + ";
+        if (op==2) s = " - ";
+        if (op==3) s = " * ";
+        if (op==4) s = " / ";
         return e1.toString() + s + e2.toString();
     }
     @Override

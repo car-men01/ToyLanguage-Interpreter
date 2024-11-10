@@ -57,7 +57,7 @@ public class ReadFileStmt implements IStmt{
 
         try {
             String line = reader.readLine();
-            if (Objects.equals(line, null)) {
+            if (line == null) {
                 line = "0";
             }
             else {

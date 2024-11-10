@@ -21,7 +21,7 @@ public class VarDeclStmt implements IStmt {
     }
     @Override
     public String toString() {
-        return "var " + this.name + " : " + this.type.toString();
+        return this.type.toString() + " " + this.name;
     }
     @Override
     public IStmt deepcopy() {

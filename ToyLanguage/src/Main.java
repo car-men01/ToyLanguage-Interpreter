@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
 
         // D:\UBB\github_projects\2nd-Year-Semester-1\MAP\ToyLanguage\write.out
-        //read the log file path from keyboard
+        // read the log file path from the keyboard
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the log file path: ");
         String logFilePath = scanner.nextLine();
@@ -148,10 +148,10 @@ public class Main {
 
         // MENU
         TextMenu menu = new TextMenu();
-        menu.addCommand(new ExitCommand("0", "exit"));
-        menu.addCommand(new RunExample("1",ex1.toString(),controller1));
-        menu.addCommand(new RunExample("2",ex2.toString(),controller2));
-        menu.addCommand(new RunExample("3",ex3.toString(),controller3));
+        menu.addCommand(new ExitCommand("0", "exit\n"));
+        menu.addCommand(new RunExample("1", "example 1\n" + ex1.toString() + "\n",controller1));
+        menu.addCommand(new RunExample("2", "example 2\n" + ex2.toString() + "\n",controller2));
+        menu.addCommand(new RunExample("3", "example 3\n" + ex3.toString() + "\n",controller3));
         menu.show();
 
     }

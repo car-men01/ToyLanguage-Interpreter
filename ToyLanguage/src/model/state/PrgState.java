@@ -69,7 +69,7 @@ public class PrgState {
 
     public String fileTableToString() {
         StringBuilder text = new StringBuilder();
-        text.append("FileTable: \n");
+        text.append("FileTable:\n");
         for(StringValue key : this.fileTable.getKeys()) {
             text.append(key).append("\n");
         }
@@ -77,7 +77,7 @@ public class PrgState {
     }
 
     public String toString() {
-        return "ExeStack: " + exeStack.toString() + "\nSymTable: " + symTable.toString() + "\nOut: " +
-                outList.toString() + "\n" + fileTableToString() + "\n";
+        return "ExeStack:\n" + exeStack.toString() + "\n\nSymTable:\n" + symTable.toString() + "\nOut:\n" +
+                outList.toString() + "\n\n" + fileTableToString();
     }
 }

@@ -16,6 +16,8 @@ public class TextMenu {
     }
 
     private void printMenu(){
+        System.out.println("Toy Language Interpreter");
+        System.out.println("Choose an option from the menu:");
         for(Command com : commands.values()) {
             String line=String.format("%4s : %s", com.getKey(), com.getDescription());
             System.out.println(line);

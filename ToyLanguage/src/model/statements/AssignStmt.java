@@ -18,7 +18,7 @@ public class AssignStmt implements IStmt{
     }
     @Override
     public String toString() {
-        return id + "=" + exp.toString();
+        return id + " = " + exp.toString();
     }
     @Override
     public PrgState execute(PrgState state) throws MyException {

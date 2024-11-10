@@ -21,7 +21,7 @@ public class IfStmt implements IStmt{
     }
     @Override
     public String toString() {
-        return "(IF(" + exp.toString() + ") THEN (" + thenS.toString() + ")ELSE(" + elseS.toString() + "))";
+        return "if (" + exp.toString() + ") then (" + thenS.toString() + ") else (" + elseS.toString() + ")";
     }
     @Override
     public PrgState execute(PrgState state) throws MyException {

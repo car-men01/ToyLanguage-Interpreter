@@ -32,7 +32,7 @@ public class MyStack<T> implements MyIStack<T> {
     public String toString() {
         StringBuilder s = new StringBuilder();
         for (T elem : this.stack) {
-            s.append(elem).append(" ");
+            s.append(elem).append(" ; ");
         }
         return s.toString();
     }
