@@ -11,18 +11,18 @@ public class PrintStmt implements IStmt{
     public PrintStmt(IExp exp) {
         this.exp = exp;
     }
-
+    @Override
     public String toString() {
         return "print(" + exp.toString()+ ")";
     }
-
+    @Override
     public PrgState execute(PrgState state) throws MyException {
         IValue val = exp.eval(state.getSymTable());
-        state.getOut().add(val); // val.toString();
+        state.getOut().add(val);
 
         return state;
     }
-
+    @Override
     public IStmt deepcopy() {
         return new PrintStmt(exp.deepcopy());
     }

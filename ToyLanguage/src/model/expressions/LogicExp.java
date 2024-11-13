@@ -17,7 +17,7 @@ public class LogicExp implements IExp{
         this.e2 = e2;
         this.op = op;
     }
-
+    @Override
     public IValue eval(MyIDictionary<String,IValue> tbl) throws MyException {
         IValue v1,v2;
         v1 = e1.eval(tbl);
@@ -31,12 +31,23 @@ public class LogicExp implements IExp{
                 n2 = i2.getVal();
                 if (op==1) return new BoolValue(n1&&n2);
                 if (op==2) return new BoolValue(n1||n2);
-            } else throw new TypeException("second operand is not a boolean");
-        } else throw new TypeException("first operand is not a boolean");
+            } else throw new TypeException("Second operand is not a boolean");
+        } else throw new TypeException("First operand is not a boolean");
         return null;
     }
-
+    @Override
     public IExp deepcopy() {
         return new LogicExp(e1.deepcopy(), e2.deepcopy(), op);
+    }
+
+    @Override
+    public String toString() {
+        String opStr = "";
+        if (op == 1) {
+            opStr = "&&";
+        } else if (op == 2) {
+            opStr = "||";
+        }
+        return e1.toString() + " " + opStr + " " + e2.toString();
     }
 }
