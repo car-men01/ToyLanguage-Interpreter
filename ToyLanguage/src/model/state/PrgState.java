@@ -1,13 +1,9 @@
 package model.state;
 
+import model.adt.*;
 import model.values.IValue;
-import model.adt.MyIDictionary;
-import model.adt.MyIList;
-import model.adt.MyIStack;
-import model.adt.MyDictionary;
-import model.adt.MyList;
-import model.adt.MyStack;
 import model.statements.IStmt;
+import model.values.IntValue;
 import model.values.StringValue;
 import java.io.BufferedReader;
 
@@ -17,16 +13,18 @@ public class PrgState {
     private MyIDictionary<String, IValue> symTable;
     private MyIList<IValue> outList;
     private MyIDictionary<StringValue, BufferedReader> fileTable;
+    private MyIHeap<Integer, IValue> heap;
 
     IStmt originalProgram;
     //public int count = 0;
 
     public PrgState(MyIStack<IStmt> exeStack, MyIDictionary<String,IValue> symTable, MyIList<IValue> outList,
-                    IStmt program, MyIDictionary<StringValue, BufferedReader> fileTable){
+                    IStmt program, MyIDictionary<StringValue, BufferedReader> fileTable, MyIHeap<Integer, IValue> heap){
         this.exeStack = exeStack;
         this.symTable = symTable;
         this.outList = outList;
         this.fileTable = fileTable;
+        this.heap = heap;
 
         originalProgram = program.deepcopy();   //recreate the entire original prg
         exeStack.push(program);
@@ -67,6 +65,10 @@ public class PrgState {
         return this.fileTable;
     }
 
+    public MyIHeap<Integer, IValue> getHeap() {
+        return heap;
+    }
+
     public String fileTableToString() {
         StringBuilder text = new StringBuilder();
         text.append("FileTable:\n");
@@ -78,6 +80,6 @@ public class PrgState {
 
     public String toString() {
         return "ExeStack:\n" + exeStack.toString() + "\n\nSymTable:\n" + symTable.toString() + "\nOut:\n" +
-                outList.toString() + "\n\n" + fileTableToString();
+                outList.toString() + "\n\n" + fileTableToString() + "\nHeap:\n" + heap.toString() + "\n\n";
     }
 }

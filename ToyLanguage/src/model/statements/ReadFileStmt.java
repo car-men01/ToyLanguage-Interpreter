@@ -43,7 +43,7 @@ public class ReadFileStmt implements IStmt{
             throw new StatementException("The variable type should be int");
         }
 
-        IValue value = this.exp.eval(table);
+        IValue value = this.exp.eval(table, state.getHeap());
         if (!value.getType().equals(new StringType())) {
             throw new StatementException("The value should be a string");
         }

@@ -1,6 +1,7 @@
 package model.expressions;
 import exceptions.DivisionByZeroException;
 import exceptions.TypeException;
+import model.adt.MyIHeap;
 import model.values.IValue;
 import model.values.IntValue;
 import model.types.IntType;
@@ -18,11 +19,11 @@ public class ArithExp implements IExp{
         this.op = op;
     }
     @Override
-    public IValue eval(MyIDictionary<String,IValue> tbl) throws MyException {
+    public IValue eval(MyIDictionary<String,IValue> tbl, MyIHeap<Integer, IValue> heap) throws MyException {
         IValue v1,v2;
-        v1 = e1.eval(tbl);
+        v1 = e1.eval(tbl, heap);
         if (v1.getType().equals(new IntType())) {
-            v2 = e2.eval(tbl);
+            v2 = e2.eval(tbl, heap);
             if (v2.getType().equals(new IntType())) {
                 IntValue i1 = (IntValue)v1;
                 IntValue i2 = (IntValue)v2;

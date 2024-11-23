@@ -50,4 +50,8 @@ public class MyDictionary<K, V> implements MyIDictionary<K, V> {
     public Set<K> getKeys() {
         return dict.keySet();
     }
+
+    public Map<K, V> getContent() {
+        return dict;
+    }
 }
