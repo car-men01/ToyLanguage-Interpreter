@@ -29,7 +29,7 @@ public class CloseRFileStmt implements IStmt{
     @Override
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, IValue> table = state.getSymTable();
-        IValue value = this.exp.eval(table);
+        IValue value = this.exp.eval(table, state.getHeap());
 
         if (!value.getType().equals(new StringType())) {
             throw new StatementException("The type of the value must be a string");

@@ -26,7 +26,7 @@ public class IfStmt implements IStmt{
     @Override
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, IValue> symTable = state.getSymTable();
-        IValue val = this.exp.eval(symTable);
+        IValue val = this.exp.eval(symTable, state.getHeap());
 
         if(!val.getType().equals(new BoolType())){
             throw new StatementException("The condition is not a boolean");
