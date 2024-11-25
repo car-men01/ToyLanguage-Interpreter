@@ -27,7 +27,7 @@ public class WhileStmt implements IStmt {
         if (val instanceof BoolValue) {
             BoolValue boolCond = (BoolValue) val;
             if (boolCond.getVal()) {
-                // If condition is true, push the statement and the while loop back onto the stack
+                // if condition is true, push the statement and the while loop back onto the stack
                 state.getStack().push(this); // the while loop itself
                 state.getStack().push(stmt); // the statement to be executed
             }

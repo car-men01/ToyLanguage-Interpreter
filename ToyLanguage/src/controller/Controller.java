@@ -19,8 +19,6 @@ public class Controller {
         this.repo = repo;
     }
 
-    //TODO: implement the garbage Collector
-
     Map<Integer, IValue> garbageCollector(List<Integer> symTableAddr, Map<Integer,IValue> heap){
         List <Integer> heapAddr = getAddrFromHeap(heap, symTableAddr);
         return heap.entrySet().stream()
@@ -28,6 +26,7 @@ public class Controller {
                         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
     List<Integer> getAddrFromSymTable(Collection<IValue> symTableValues){
+        // get the addresses from the SymTable
         return symTableValues.stream()
                 .filter(v-> v instanceof RefValue)
                 .map(v-> {
@@ -36,27 +35,27 @@ public class Controller {
                 })
                 .collect(Collectors.toList());
     }
-    // Recursively collects addresses referenced in the heap
     List<Integer> getAddrFromHeap(Map<Integer, IValue> heap, List<Integer> symTableAddr) {
+        // get the addresses from the heap that are not referenced by the SymTable
         List<Integer> addresses = symTableAddr;
-        boolean added;
-
-        do {
+        boolean added = true;
+        while (added) {
             added = false;
-            // Collect new addresses referenced by RefValues in the current heap
+            // collect new addresses referenced by RefValues in the current heap
             List<Integer> newAddresses = heap.entrySet().stream()
-                    .filter(e -> addresses.contains(e.getKey())) // Only check reachable addresses
+                    .filter(e -> addresses.contains(e.getKey())) // only check reachable addresses
                     .map(Map.Entry::getValue)
                     .filter(v -> v instanceof RefValue)
                     .map(v -> ((RefValue) v).getHeapAddr())
-                    .filter(addr -> !addresses.contains(addr)) // Avoid duplicates
-                    .collect(Collectors.toList());
-
+                    .filter(addr -> !addresses.contains(addr)) // avoid duplicates in the list
+                    .toList();
+            // add the new addresses to the list of addresses
             if (!newAddresses.isEmpty()) {
                 addresses.addAll(newAddresses);
-                added = true; // Continue if new addresses are added
+                // repeat the process if new addresses were added
+                added = true;
             }
-        } while (added);
+        }
 
         return addresses;
     }
@@ -80,8 +79,7 @@ public class Controller {
             this.displayPrgState();
             repo.logPrgStateExec();
             // Garbage Collector
-            prg.getHeap().setContent(
-                    garbageCollector(
+            prg.getHeap().setContent(garbageCollector(
                     getAddrFromSymTable(prg.getSymTable().getContent().values()), // get addresses from SymTable
                     prg.getHeap().getContent()) // get the heap
             );
