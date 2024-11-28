@@ -17,7 +17,7 @@ public class VarDeclStmt implements IStmt {
         if(state.getSymTable().contains(this.name))
             throw new StatementException("A variable with the same name already exists!");
         state.getSymTable().insert(this.name, this.type.getDefaultValue());
-        return state;
+        return null;
     }
     @Override
     public String toString() {

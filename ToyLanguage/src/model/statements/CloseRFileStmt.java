@@ -48,6 +48,6 @@ public class CloseRFileStmt implements IStmt{
         }
         fileTable.remove((StringValue) value);
 
-        return state;
+        return null;
     }
 }

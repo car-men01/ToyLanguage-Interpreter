@@ -20,7 +20,7 @@ public class PrintStmt implements IStmt{
         IValue val = exp.eval(state.getSymTable(), state.getHeap());
         state.getOut().add(val);
 
-        return state;
+        return null;
     }
     @Override
     public IStmt deepcopy() {

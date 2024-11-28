@@ -33,7 +33,7 @@ public class AssignStmt implements IStmt{
         }
         else throw new StatementException("The used variable " + id + " was not declared before");
 
-        return state;
+        return null;
     }
     @Override
     public IStmt deepcopy() {

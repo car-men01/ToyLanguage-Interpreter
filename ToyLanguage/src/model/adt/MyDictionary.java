@@ -1,6 +1,7 @@
 package model.adt;
 
 import exceptions.KeyNotFoundException;
+import model.values.IValue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,5 +54,16 @@ public class MyDictionary<K, V> implements MyIDictionary<K, V> {
 
     public Map<K, V> getContent() {
         return dict;
+    }
+
+    @Override
+    public MyIDictionary<K, V> clone() {
+        MyIDictionary<K, V> newDict = new MyDictionary<K, V>();
+        for (K key : dict.keySet()) {
+            //newDict.insert(key, dict.get(key));
+            IValue value = (IValue) dict.get(key);
+            newDict.insert(key, (V) value.deepcopy());
+        }
+        return newDict;
     }
 }

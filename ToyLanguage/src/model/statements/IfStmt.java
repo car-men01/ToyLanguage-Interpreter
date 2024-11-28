@@ -38,7 +38,7 @@ public class IfStmt implements IStmt{
         else
             state.getStack().push(elseS);
 
-        return state;
+        return null;
     }
     @Override
     public IStmt deepcopy() {

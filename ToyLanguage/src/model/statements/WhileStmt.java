@@ -24,8 +24,7 @@ public class WhileStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
         IValue val = exp.eval(state.getSymTable(), state.getHeap());
-        if (val instanceof BoolValue) {
-            BoolValue boolCond = (BoolValue) val;
+        if (val instanceof BoolValue boolCond) {
             if (boolCond.getVal()) {
                 // if condition is true, push the statement and the while loop back onto the stack
                 state.getStack().push(this); // the while loop itself
@@ -34,7 +33,7 @@ public class WhileStmt implements IStmt {
         } else {
             throw new StatementException("The condition expression is not a boolean value!");
         }
-        return state;
+        return null;
     }
 
     @Override

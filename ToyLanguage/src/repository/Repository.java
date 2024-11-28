@@ -22,23 +22,6 @@ public class Repository implements IRepo {
         this.prgStates.add(prgState);
         this.countStatePos = 0;
         this.logFilePath = logFilePath;
-
-        //PrintWriter
-       // this.initializeLogFilePath();
-    }
-
-    /*
-    private void initializeLogFilePath() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the log file path: ");
-        this.logFilePath = scanner.nextLine();
-    }
-
-     */
-
-    @Override
-    public PrgState getCrtPrg() {
-        return prgStates.get(this.getCountStatePos()); // this.countStatePos;
     }
 
     @Override
@@ -47,9 +30,16 @@ public class Repository implements IRepo {
         this.setCountStatePos(this.getCountStatePos() + 1);
     }
     @Override
-    public void logPrgStateExec() throws MyException {
+    public List<PrgState> getPrgList() {
+        return this.prgStates;
+    }
+    @Override
+    public void setPrgList(List<PrgState> prgStates) {
+        this.prgStates = prgStates;
+    }
+    @Override
+    public void logPrgStateExec(PrgState prgState) throws MyException {
         try {
-            PrgState prgState = this.getCrtPrg();
             PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(this.logFilePath, true)));
             logFile.println(prgState.toString());
             logFile.close();
