@@ -4,6 +4,8 @@ import exceptions.KeyNotFoundException;
 import exceptions.MyException;
 import model.adt.MyIDictionary;
 import model.adt.MyIHeap;
+import model.types.IType;
+import model.types.RefType;
 import model.values.IValue;
 import model.values.RefValue;
 
@@ -29,6 +31,15 @@ public class ReadHeapExp implements IExp{
             return value;
         } else {
             throw new MyException("Value is not a reference");
+        }
+    }
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType type = exp.typecheck(typeEnv);
+        if (type instanceof RefType refType) {
+            return refType.getInner();
+        } else {
+            throw new MyException("The expression is not a reference");
         }
     }
     @Override

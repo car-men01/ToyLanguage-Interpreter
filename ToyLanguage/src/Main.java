@@ -163,6 +163,16 @@ public class Main {
 
         IStmt ex1 = new CompStmt(varDeclStmt1, new CompStmt(varDeclStmt2, new CompStmt(assignStmt1, new CompStmt(memoryStmt1, new CompStmt(forkStmt1, new CompStmt(printStmt3, printStmt4))))));
 
+        // call the typecheck before creating the PrgState
+        MyIDictionary<String, IType> typeEnv = new MyDictionary<String, IType>();
+        try {
+            ex1.typecheck(typeEnv);
+            //System.out.println("\n\n --------------Typecheck for example 1 passed---------------\n\n");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+
         PrgState prgState1 = new PrgState(new MyStack<IStmt>(), new MyDictionary<String, IValue>(), new MyList<IValue>(), ex1, new MyDictionary<StringValue, BufferedReader>(), new MyHeap<Integer, IValue>());
         IRepo repository1 = new Repository(prgState1, logFilePath);
         Controller controller1 = new Controller(repository1);

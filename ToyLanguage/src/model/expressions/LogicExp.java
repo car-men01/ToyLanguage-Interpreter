@@ -4,6 +4,7 @@ import exceptions.TypeException;
 import model.adt.MyIDictionary;
 import exceptions.MyException;
 import model.adt.MyIHeap;
+import model.types.IType;
 import model.values.BoolValue;
 import model.values.IValue;
 import model.types.BoolType;
@@ -36,6 +37,19 @@ public class LogicExp implements IExp{
         } else throw new TypeException("First operand is not a boolean");
         return null;
     }
+
+    @Override
+    public IType typecheck(MyIDictionary<String,IType> typeEnv) throws MyException {
+        IType t1, t2;
+        t1 = e1.typecheck(typeEnv);
+        t2 = e2.typecheck(typeEnv);
+        if (t1.equals(new BoolType())) {
+            if (t2.equals(new BoolType())) {
+                return new BoolType();
+            } else throw new TypeException("Second operand is not a boolean");
+        } else throw new TypeException("First operand is not a boolean");
+    }
+
     @Override
     public IExp deepcopy() {
         return new LogicExp(e1.deepcopy(), e2.deepcopy(), op);

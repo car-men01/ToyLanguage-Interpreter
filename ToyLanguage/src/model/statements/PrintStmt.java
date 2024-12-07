@@ -1,8 +1,10 @@
 package model.statements;
 
+import model.adt.MyIDictionary;
 import model.state.PrgState;
 import exceptions.MyException;
 import model.expressions.IExp;
+import model.types.IType;
 import model.values.IValue;
 
 public class PrintStmt implements IStmt{
@@ -21,6 +23,11 @@ public class PrintStmt implements IStmt{
         state.getOut().add(val);
 
         return null;
+    }
+    @Override
+    public MyIDictionary<String, model.types.IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        exp.typecheck(typeEnv);
+        return typeEnv;
     }
     @Override
     public IStmt deepcopy() {

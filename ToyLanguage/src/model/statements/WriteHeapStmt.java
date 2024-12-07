@@ -9,6 +9,7 @@ import model.adt.MyIStack;
 import model.expressions.IExp;
 import model.state.PrgState;
 import model.types.IType;
+import model.types.RefType;
 import model.values.IValue;
 import model.values.RefValue;
 
@@ -43,6 +44,17 @@ public class WriteHeapStmt implements IStmt{
         heap.update(refVal.getHeapAddr(), value);
 
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType typeVar = typeEnv.lookup(varName);
+        IType typeExp = exp.typecheck(typeEnv);
+
+        if(!typeVar.equals(new RefType(typeExp)))
+            throw new TypeException("The variable is not a reference type");
+
+        return typeEnv;
     }
 
     @Override

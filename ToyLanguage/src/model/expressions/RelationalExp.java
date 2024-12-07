@@ -3,6 +3,7 @@ package model.expressions;
 import exceptions.MyException;
 import model.adt.MyIDictionary;
 import model.adt.MyIHeap;
+import model.types.IType;
 import model.types.IntType;
 import model.values.BoolValue;
 import model.values.IValue;
@@ -48,6 +49,22 @@ public class RelationalExp implements IExp{
                 }
             } else throw new MyException("Invalid type, second operand is not an integer");
         } else throw new MyException("Invalid type, first operand is not an integer");
+    }
+
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        IType t1, t2;
+        t1 = e1.typecheck(typeEnv);
+        t2 = e2.typecheck(typeEnv);
+        if (t1.equals(new IntType())) {
+            if (t2.equals(new IntType())) {
+                return new BoolValue(true).getType();
+            } else {
+                throw new MyException("Second operand is not an integer");
+            }
+        } else {
+            throw new MyException("First operand is not an integer");
+        }
     }
 
     @Override
