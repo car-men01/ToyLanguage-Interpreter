@@ -30,10 +30,9 @@ public class WriteHeapStmt implements IStmt{
             throw new KeyNotFoundException("Variable not found in symbol table!");
 
         IValue val = symTbl.lookup(varName);
-        if(!(val instanceof RefValue))
+        if(!(val instanceof RefValue refVal))
             throw new TypeException("Value is not a ref value");
 
-        RefValue refVal = (RefValue) val;
         if(!heap.contains(refVal.getHeapAddr()))
             throw new KeyNotFoundException("Address not found in heap");
 
@@ -43,7 +42,7 @@ public class WriteHeapStmt implements IStmt{
 
         heap.update(refVal.getHeapAddr(), value);
 
-        return state;
+        return null;
     }
 
     @Override

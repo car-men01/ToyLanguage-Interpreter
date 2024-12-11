@@ -13,4 +13,5 @@ public interface MyIDictionary<K, V> {
     void update(K key, V value);
     Set<K> getKeys();
     Map<K, V> getContent();
+    MyIDictionary<K, V> clone();
 }

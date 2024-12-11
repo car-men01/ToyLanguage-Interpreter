@@ -1,9 +1,9 @@
 package model.state;
 
+import exceptions.MyException;
 import model.adt.*;
 import model.values.IValue;
 import model.statements.IStmt;
-import model.values.IntValue;
 import model.values.StringValue;
 import java.io.BufferedReader;
 
@@ -15,11 +15,17 @@ public class PrgState {
     private MyIDictionary<StringValue, BufferedReader> fileTable;
     private MyIHeap<Integer, IValue> heap;
 
+
     IStmt originalProgram;
-    //public int count = 0;
+    private int id;
+    private static int globalId = 1;
+
+    public static synchronized int generateId() {
+        return globalId++;
+    }
 
     public PrgState(MyIStack<IStmt> exeStack, MyIDictionary<String,IValue> symTable, MyIList<IValue> outList,
-                    IStmt program, MyIDictionary<StringValue, BufferedReader> fileTable, MyIHeap<Integer, IValue> heap){
+                    IStmt program, MyIDictionary<StringValue, BufferedReader> fileTable, MyIHeap<Integer, IValue> heap) {
         this.exeStack = exeStack;
         this.symTable = symTable;
         this.outList = outList;
@@ -28,26 +34,8 @@ public class PrgState {
 
         originalProgram = program.deepcopy();   //recreate the entire original prg
         exeStack.push(program);
-
-        /*
-        // sem 6
-        init();
-        count = 1;
-         */
+        this.id = generateId();
     }
-
-    /*
-    // sem 6
-    // maybe should be private
-    public void init() {
-        this.exeStack = new MyStack<IStmt>();       //MyIStack<IStmt>
-        this.symTable = new MyDictionary<String, IValue>();  //MyIDictionary<String, IValue>
-        this.outList = new MyList<IValue>();      //MyIList<IValue>
-
-        exeStack.push(this.originalProgram);
-        this.originalProgram = this.originalProgram.deepcopy();
-    }
-    */
 
     public MyIStack<IStmt> getStack() {
         return exeStack;
@@ -66,7 +54,23 @@ public class PrgState {
     }
 
     public MyIHeap<Integer, IValue> getHeap() {
-        return heap;
+        return this.heap;
+    }
+
+    public boolean isNotCompleted() {
+        return !exeStack.isEmpty();
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public PrgState oneStep() throws MyException {
+        if(exeStack.isEmpty()) {
+            throw new RuntimeException("Program state stack is empty");
+        }
+        IStmt currentStatement = exeStack.pop();
+        return currentStatement.execute(this);
     }
 
     public String fileTableToString() {
@@ -79,7 +83,7 @@ public class PrgState {
     }
 
     public String toString() {
-        return "ExeStack:\n" + exeStack.toString() + "\n\nSymTable:\n" + symTable.toString() + "\nOut:\n" +
+        return "Program id: " + this.getId() + "\n\nExeStack:\n" + exeStack.toString() + "\n\nSymTable:\n" + symTable.toString() + "\nOut:\n" +
                 outList.toString() + "\n\n" + fileTableToString() + "\nHeap:\n" + heap.toString() + "\n\n";
     }
 }

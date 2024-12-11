@@ -49,13 +49,6 @@ public class NewHeapMemoryStmt implements IStmt{
             throw new TypeException("The type of the variable and the type of the expression do not match");
         }
 
-//        if (!symTable.lookup(varName).getType().equals(val.getType())) {
-//            throw new TypeException("The type of the variable and the type of the expression do not match");
-//        }
-//        if (!val.getType().equals(symTable.lookup(varName).getType())) {
-//            throw new TypeException("The type of the variable and the type of the expression do not match");
-//        }
-
         MyIHeap<Integer, IValue> heap = state.getHeap();
         int address = heap.getNextFreeAddr();
 
@@ -63,6 +56,6 @@ public class NewHeapMemoryStmt implements IStmt{
         RefValue refVal = new RefValue(address, val.getType());
         symTable.update(varName, refVal);
 
-        return state;
+        return null;
     }
 }

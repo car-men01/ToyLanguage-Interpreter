@@ -5,9 +5,12 @@ import exceptions.MyException;
 import model.state.PrgState;
 
 import java.io.IOException;
+import java.util.List;
 
 public interface IRepo {
-    PrgState getCrtPrg();
+    //PrgState getCrtPrg();
     void addPrgState(PrgState state);
-    void logPrgStateExec() throws MyException;
+    void setPrgList(List<PrgState> prgStates);
+    List<PrgState> getPrgList();
+    void logPrgStateExec(PrgState prgState) throws MyException;
 }

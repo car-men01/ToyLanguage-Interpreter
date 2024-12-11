@@ -69,6 +69,6 @@ public class ReadFileStmt implements IStmt{
             throw new StatementException("Could not read line");
         }
 
-        return state;
+        return null;
     }
 }

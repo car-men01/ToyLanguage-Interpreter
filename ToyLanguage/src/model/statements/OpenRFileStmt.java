@@ -49,6 +49,6 @@ public class OpenRFileStmt implements IStmt{
             throw new StatementException("The file does not exist or could not be opened");
         }
 
-        return state;
+        return null;
     }
 }
