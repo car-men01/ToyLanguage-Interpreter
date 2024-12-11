@@ -30,6 +30,7 @@ public class Controller {
                 .filter(e->heapAddr.contains(e.getKey()))
                         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
+
     List<Integer> getAddrFromSymTable(Collection<IValue> symTableValues){
         // get the addresses from the SymTable
         return symTableValues.stream()
@@ -40,6 +41,7 @@ public class Controller {
                 })
                 .collect(Collectors.toList());
     }
+
     List<Integer> getAddrFromHeap(Map<Integer, IValue> heap, List<Integer> symTableAddr) {
         // get the addresses from the heap that are not referenced by the SymTable
         List<Integer> addresses = symTableAddr;
@@ -66,7 +68,7 @@ public class Controller {
     }
 
     Map<Integer, IValue> conservativeGarbageCollector(List<PrgState> prgStates) {
-        // Collect all addresses from the symbol tables of all program states
+        // Collect all addresses from the sym tables of all program states
         List<Integer> symTableAddresses = prgStates.stream()
                 .flatMap(prg -> getAddrFromSymTable(prg.getSymTable().getContent().values()).stream())
                 .collect(Collectors.toList());
@@ -82,7 +84,6 @@ public class Controller {
                 .filter(entry -> reachableHeapAddresses.contains(entry.getKey()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
-
 
     List<PrgState> removeCompletedPrg(List<PrgState> inPrgList){
         return inPrgList.stream()

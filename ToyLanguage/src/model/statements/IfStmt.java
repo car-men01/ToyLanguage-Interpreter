@@ -3,6 +3,7 @@ import model.adt.MyIDictionary;
 import model.state.PrgState;
 import exceptions.MyException;
 import model.expressions.IExp;
+import model.types.IType;
 import model.values.IValue;
 import model.values.BoolValue;
 import model.types.BoolType;
@@ -39,6 +40,18 @@ public class IfStmt implements IStmt{
             state.getStack().push(elseS);
 
         return null;
+    }
+    @Override
+    public MyIDictionary<String, model.types.IType> typecheck(MyIDictionary<String, model.types.IType> typeEnv) throws MyException {
+        IType typeexp = exp.typecheck(typeEnv);
+        if(typeexp.equals(new BoolType()))
+        {
+            thenS.typecheck(typeEnv);
+            elseS.typecheck(typeEnv);
+            return typeEnv;
+        }
+        else
+            throw new MyException("The condition of IF has not the type bool");
     }
     @Override
     public IStmt deepcopy() {

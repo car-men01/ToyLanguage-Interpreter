@@ -2,8 +2,11 @@ package model.statements;
 
 import exceptions.MyException;
 import exceptions.StatementException;
+import model.adt.MyIDictionary;
 import model.expressions.IExp;
 import model.state.PrgState;
+import model.types.BoolType;
+import model.types.IType;
 import model.values.BoolValue;
 import model.values.IValue;
 
@@ -34,6 +37,18 @@ public class WhileStmt implements IStmt {
             throw new StatementException("The condition expression is not a boolean value!");
         }
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, model.types.IType> typeEnv) throws MyException {
+        IType typeexp = exp.typecheck(typeEnv);
+        if(typeexp.equals(new BoolType()))
+        {
+            stmt.typecheck(typeEnv);
+            return typeEnv;
+        }
+        else
+            throw new MyException("The condition of WHILE has not the type bool");
     }
 
     @Override

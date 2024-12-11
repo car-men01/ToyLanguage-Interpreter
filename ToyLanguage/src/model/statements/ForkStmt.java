@@ -1,5 +1,6 @@
 package model.statements;
 
+import exceptions.MyException;
 import model.adt.*;
 import model.state.PrgState;
 import model.values.IValue;
@@ -26,6 +27,10 @@ public class ForkStmt implements IStmt{
         MyIDictionary<String, IValue> newSymTable = state.getSymTable().clone();
 
         return new PrgState(newStack, newSymTable, state.getOut(), stmt, state.getFileTable(), state.getHeap());
+    }
+    @Override
+    public MyIDictionary<String, model.types.IType> typecheck(MyIDictionary<String, model.types.IType> typeEnv) throws MyException {
+        return stmt.typecheck(typeEnv);
     }
 
     @Override

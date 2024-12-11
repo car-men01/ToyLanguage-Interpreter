@@ -1,5 +1,6 @@
 package model.statements;
 
+import model.adt.MyIDictionary;
 import model.state.PrgState;
 import model.types.IType;
 import exceptions.StatementException;
@@ -18,6 +19,11 @@ public class VarDeclStmt implements IStmt {
             throw new StatementException("A variable with the same name already exists!");
         state.getSymTable().insert(this.name, this.type.getDefaultValue());
         return null;
+    }
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException {
+        typeEnv.insert(this.name, this.type);
+        return typeEnv;
     }
     @Override
     public String toString() {

@@ -3,6 +3,7 @@ package model.expressions;
 import model.adt.MyIDictionary;
 import exceptions.MyException;
 import model.adt.MyIHeap;
+import model.types.IType;
 import model.values.IValue;
 
 public class VarExp implements IExp{
@@ -15,6 +16,10 @@ public class VarExp implements IExp{
     @Override
     public IValue eval(MyIDictionary<String,IValue> tbl, MyIHeap<Integer, IValue> heap) throws MyException {
         return tbl.lookup(var);
+    }
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {
+        return typeEnv.lookup(var);
     }
     @Override
     public String toString() {

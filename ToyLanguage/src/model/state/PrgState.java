@@ -2,6 +2,7 @@ package model.state;
 
 import exceptions.MyException;
 import model.adt.*;
+import model.types.IType;
 import model.values.IValue;
 import model.statements.IStmt;
 import model.values.StringValue;
@@ -14,7 +15,7 @@ public class PrgState {
     private MyIList<IValue> outList;
     private MyIDictionary<StringValue, BufferedReader> fileTable;
     private MyIHeap<Integer, IValue> heap;
-
+    //private MyIDictionary<String, IType> typeEnv;
 
     IStmt originalProgram;
     private int id;

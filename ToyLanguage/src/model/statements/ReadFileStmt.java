@@ -5,6 +5,7 @@ import exceptions.StatementException;
 import model.adt.MyIDictionary;
 import model.expressions.IExp;
 import model.state.PrgState;
+import model.types.IType;
 import model.types.IntType;
 import model.types.StringType;
 import model.values.IValue;
@@ -70,5 +71,15 @@ public class ReadFileStmt implements IStmt{
         }
 
         return null;
+    }
+    @Override
+    public MyIDictionary<String, model.types.IType> typecheck(MyIDictionary<String, model.types.IType> typeEnv) throws MyException {
+        IType typeexp = exp.typecheck(typeEnv);
+        if (typeexp.equals(new StringType())) {
+            return typeEnv;
+        }
+        else {
+            throw new StatementException("The expression should be a string");
+        }
     }
 }

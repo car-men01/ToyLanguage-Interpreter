@@ -2,6 +2,7 @@ package model.expressions;
 import exceptions.DivisionByZeroException;
 import exceptions.TypeException;
 import model.adt.MyIHeap;
+import model.types.IType;
 import model.values.IValue;
 import model.values.IntValue;
 import model.types.IntType;
@@ -41,6 +42,18 @@ public class ArithExp implements IExp{
         } else throw new TypeException("First operand is not an integer");
         return null;
     }
+    @Override
+    public IType typecheck(MyIDictionary<String,IType> typeEnv) throws MyException {
+        IType t1, t2;
+        t1 = e1.typecheck(typeEnv);
+        t2 = e2.typecheck(typeEnv);
+        if (t1.equals(new IntType())) {
+            if (t2.equals(new IntType())) {
+                return new IntType();
+            } else throw new TypeException("Second operand is not an integer");
+        } else throw new TypeException("First operand is not an integer");
+    }
+
     @Override
     public String toString() {
         String s = "";

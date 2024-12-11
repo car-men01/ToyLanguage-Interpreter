@@ -50,4 +50,9 @@ public class CloseRFileStmt implements IStmt{
 
         return null;
     }
+    @Override
+    public MyIDictionary<String, model.types.IType> typecheck(MyIDictionary<String, model.types.IType> typeEnv) throws MyException {
+        exp.typecheck(typeEnv);
+        return typeEnv;
+    }
 }
