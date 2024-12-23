@@ -1,13 +1,12 @@
 package model.statements;
 
 import exceptions.MyException;
-import model.adt.*;
+import model.adt.MyIDictionary;
+import model.adt.MyIStack;
+import model.adt.MyStack;
 import model.state.PrgState;
 import model.types.IType;
 import model.values.IValue;
-import model.values.StringValue;
-
-import java.io.BufferedReader;
 
 public class ForkStmt implements IStmt{
     IStmt stmt;
