@@ -26,7 +26,6 @@ public class MainExecutionWindow {
             stage.setTitle("Program Execution");
             stage.setScene(scene);
 
-            // Handle cleanup
             stage.setOnCloseRequest((WindowEvent event) -> Platform.exit());
 
             stage.show();

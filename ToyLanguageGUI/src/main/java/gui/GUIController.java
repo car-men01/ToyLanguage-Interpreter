@@ -46,9 +46,6 @@ public class GUIController{
     @FXML
     private TableColumn<Pair<Integer, String>, String> heapValueCol;
 
-    @FXML
-    private Button runButton;
-
     private Controller controller;
 
 
@@ -61,7 +58,7 @@ public class GUIController{
         IRepo repository = new Repository(initialPrgState, logFilePath);
         controller = new Controller(repository);
 
-        prgStateListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+        prgStateListView.getSelectionModel().selectedItemProperty().addListener((_, _, newValue) -> {
             if (newValue != null) {
                 PrgState selectedPrgState = getCurrentPrgState();
                 if (selectedPrgState != null) {
@@ -74,45 +71,6 @@ public class GUIController{
         updateAllViews();
     }
 
-//    @FXML
-//    private void handleRunOneStep() {
-//        try {
-//            controller.executor = Executors.newFixedThreadPool(2);
-//
-//            // Remove the completed programs
-//            List<PrgState> prgList = controller.removeCompletedPrg(controller.getRepo().getPrgList());
-//
-//            // Ensure at least one program state exists
-//            if (prgList.isEmpty()) {
-//                showError("No more steps to execute.");
-//                controller.executor.shutdownNow();
-//                return;
-//            }
-//
-//            // Garbage collection
-//            List<PrgState> finalPrgList = prgList;
-//            prgList.forEach(prg -> prg.getHeap().setContent(controller.conservativeGarbageCollector(finalPrgList)));
-//
-//            // Execute one step for all programs
-//            controller.oneStepForAllPrg(prgList);
-//
-//            // Remove completed programs again
-//            prgList = controller.removeCompletedPrg(controller.getRepo().getPrgList());
-//            controller.getRepo().setPrgList(prgList);
-//
-//            // Check again if all are completed
-////            if (prgList.isEmpty()) {
-////                showError("No more steps to execute.");
-////                controller.executor.shutdownNow();
-////                return;
-////            }
-//
-//            // Update the UI
-//            updateAllViews();
-//        } catch (Exception e) {
-//            showError(e.getMessage());
-//        }
-//    }
 
     @FXML
     private void handleRunOneStep() {
@@ -190,39 +148,6 @@ public class GUIController{
         }
     }
 
-
-//    private void updateAllViews() {
-//        try {
-//            List<PrgState> prgStates = controller.getRepo().getPrgList();
-//
-//            // Update number of program states
-//            numPrgStates.setText(String.valueOf(prgStates.size()));
-//
-//            // Update program state identifiers
-//            ObservableList<Integer> prgStateIds = FXCollections.observableArrayList(
-//                    prgStates.stream().map(PrgState::getId).collect(Collectors.toList())
-//            );
-//            prgStateListView.setItems(prgStateIds);
-//
-//            // Select the first program state by default if none is selected
-//            if (prgStateListView.getSelectionModel().isEmpty() && !prgStateIds.isEmpty()) {
-//                prgStateListView.getSelectionModel().select(0);
-//            }
-//
-//            PrgState selectedPrgState = getCurrentPrgState();
-//
-//            if (selectedPrgState != null) {
-//                updateHeapTable(selectedPrgState);
-//                updateOutputList(selectedPrgState);
-//                updateFileTable(selectedPrgState);
-//                updateSymTable(selectedPrgState);
-//                updateExeStack(selectedPrgState);
-//            }
-//        } catch (Exception e) {
-//            showError(e.getMessage());
-//        }
-//    }
-
     private void updateHeapTable(PrgState prgState) {
         ObservableList<Pair<Integer, String>> heapTableItems = FXCollections.observableArrayList(
                 prgState.getHeap().getContent().entrySet().stream()
@@ -279,11 +204,6 @@ public class GUIController{
                 .filter(prgState -> prgState.getId() == currentId)
                 .findFirst()
                 .orElse(null);
-    }
-
-    @FXML
-    public void handlePrgStateSelection(MouseEvent mouseEvent) {
-        updateAllViews();
     }
 
     private void showError(String message) {

@@ -56,13 +56,31 @@ public class ProgramSelectionController {
         AssignStmt assignStmt2 = new AssignStmt("v", new ValueExp(new IntValue(32)));
         PrintStmt printStmt1 = new PrintStmt(new VarExp("v"));
         PrintStmt printStmt2 = new PrintStmt(new ReadHeapExp(new VarExp("a")));
-        ForkStmt forkStmt1 = new ForkStmt(new CompStmt(writeHeapStmt1, new CompStmt(assignStmt2, new CompStmt(printStmt1, printStmt2))));
+        //ForkStmt forkStmt1 = new ForkStmt(new CompStmt(writeHeapStmt1, new CompStmt(assignStmt2, new CompStmt(printStmt1, printStmt2))));
+        VarDeclStmt varDeclStmt222 = new VarDeclStmt("x", new IntType());
+        ForkStmt forkStmt1 = new ForkStmt(new CompStmt(varDeclStmt222, new CompStmt(writeHeapStmt1, new CompStmt(assignStmt2, new CompStmt(printStmt1, printStmt2)))));
+
         PrintStmt printStmt3 = new PrintStmt(new VarExp("v"));
         PrintStmt printStmt4 = new PrintStmt(new ReadHeapExp(new VarExp("a")));
 
         IStmt ex1 = new CompStmt(varDeclStmt1, new CompStmt(varDeclStmt2, new CompStmt(assignStmt1, new CompStmt(memoryStmt1, new CompStmt(forkStmt1, new CompStmt(printStmt3, printStmt4))))));
 
         programExamples.add(ex1);
+
+        // example 2
+        // int v; Ref int a; v=10;new(a,22);print(v);print(rH(a));a=0
+        //write this program
+        VarDeclStmt varDeclStmt3 = new VarDeclStmt("v", new IntType());
+        VarDeclStmt varDeclStmt4 = new VarDeclStmt("a", new RefType(new IntType()));
+        AssignStmt assignStmt3 = new AssignStmt("v", new ValueExp(new IntValue(10)));
+        NewHeapMemoryStmt memoryStmt2 = new NewHeapMemoryStmt("a", new ValueExp(new IntValue(22)));
+        PrintStmt printStmt5 = new PrintStmt(new VarExp("v"));
+        PrintStmt printStmt6 = new PrintStmt(new ReadHeapExp(new VarExp("a")));
+        AssignStmt assignStmt4 = new AssignStmt("a", new ValueExp(new IntValue(0)));
+
+        IStmt ex2 = new CompStmt(varDeclStmt3, new CompStmt(varDeclStmt4, new CompStmt(assignStmt3, new CompStmt(memoryStmt2, new CompStmt(printStmt5, new CompStmt(printStmt6, assignStmt4))))));
+
+        programExamples.add(ex2);
 
         return programExamples;
     }
