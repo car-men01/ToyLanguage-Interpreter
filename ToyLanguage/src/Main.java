@@ -167,7 +167,7 @@ public class Main {
         MyIDictionary<String, IType> typeEnv = new MyDictionary<String, IType>();
         try {
             ex1.typecheck(typeEnv);
-            //System.out.println("\n\n --------------Typecheck for example 1 passed---------------\n\n");
+            System.out.println("\n\n --------------Typecheck for example 1 passed---------------\n\n");
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return;
