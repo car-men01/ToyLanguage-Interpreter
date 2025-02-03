@@ -8,6 +8,8 @@ import model.adt.MyIStack;
 import model.statements.IStmt;
 import model.values.IValue;
 import model.values.StringValue;
+import model.adt.MyILockTable;
+import model.adt.MyLockTable;
 
 import java.io.BufferedReader;
 
@@ -18,7 +20,7 @@ public class PrgState {
     private MyIList<IValue> outList;
     private MyIDictionary<StringValue, BufferedReader> fileTable;
     private MyIHeap<Integer, IValue> heap;
-    //private MyIDictionary<String, IType> typeEnv;
+    private MyILockTable<Integer, Integer> lockTable;
 
     IStmt originalProgram;
     private int id;
@@ -29,12 +31,14 @@ public class PrgState {
     }
 
     public PrgState(MyIStack<IStmt> exeStack, MyIDictionary<String,IValue> symTable, MyIList<IValue> outList,
-                    IStmt program, MyIDictionary<StringValue, BufferedReader> fileTable, MyIHeap<Integer, IValue> heap) {
+                    IStmt program, MyIDictionary<StringValue, BufferedReader> fileTable, MyIHeap<Integer, IValue> heap,
+                    MyILockTable<Integer, Integer> lockTable) {
         this.exeStack = exeStack;
         this.symTable = symTable;
         this.outList = outList;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.lockTable = lockTable;
 
         originalProgram = program.deepcopy();   //recreate the entire original prg
         exeStack.push(program);
@@ -59,6 +63,10 @@ public class PrgState {
 
     public MyIHeap<Integer, IValue> getHeap() {
         return this.heap;
+    }
+
+    public MyILockTable<Integer, Integer> getLockTable() {
+        return this.lockTable;
     }
 
     public boolean isNotCompleted() {

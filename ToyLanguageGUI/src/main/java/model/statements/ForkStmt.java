@@ -26,7 +26,7 @@ public class ForkStmt implements IStmt{
         //newStack.push(stmt);
         MyIDictionary<String, IValue> newSymTable = state.getSymTable().clone();
 
-        return new PrgState(newStack, newSymTable, state.getOut(), stmt, state.getFileTable(), state.getHeap());
+        return new PrgState(newStack, newSymTable, state.getOut(), stmt, state.getFileTable(), state.getHeap(), state.getLockTable());
     }
     @Override
     public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws MyException {

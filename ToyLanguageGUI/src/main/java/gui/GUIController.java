@@ -8,10 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Pair;
-import model.adt.MyDictionary;
-import model.adt.MyHeap;
-import model.adt.MyList;
-import model.adt.MyStack;
+import model.adt.*;
 import model.state.PrgState;
 import model.statements.IStmt;
 import repository.IRepo;
@@ -45,13 +42,19 @@ public class GUIController{
     private TableColumn<Pair<Integer, String>, String> heapAddressCol;
     @FXML
     private TableColumn<Pair<Integer, String>, String> heapValueCol;
+    @FXML
+    private TableView<Pair<Integer, Integer>> lockTableView;
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, String> lockIndexCol;
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, String> lockValueCol;
 
     private Controller controller;
 
 
     public void initializeExecution(IStmt program) {
         PrgState initialPrgState = new PrgState(
-                new MyStack<>(), new MyDictionary<>(), new MyList<>(), program, new MyDictionary<>(), new MyHeap<>()
+                new MyStack<>(), new MyDictionary<>(), new MyList<>(), program, new MyDictionary<>(), new MyHeap<>(), new MyLockTable<>()
         );
 
         String logFilePath = "D:\\UBB\\github_projects\\2nd-Year-Semester-1\\MAP\\ToyLanguageGUI\\write.out";
@@ -142,10 +145,23 @@ public class GUIController{
                 updateFileTable(selectedPrgState);
                 updateSymTable(selectedPrgState);
                 updateExeStack(selectedPrgState);
+                updateLockTable(selectedPrgState);
             }
         } catch (Exception e) {
             showError(e.getMessage());
         }
+    }
+
+    private void updateLockTable(PrgState prgState) {
+        ObservableList<Pair<Integer, Integer>> lockTableItems = FXCollections.observableArrayList(
+                prgState.getLockTable().getContent().entrySet().stream()
+                        .map(entry -> new Pair<>(entry.getKey(), entry.getValue()))
+                        .collect(Collectors.toList())
+        );
+        // Bind Lock Table columns
+        lockIndexCol.setCellValueFactory(data -> new SimpleStringProperty(String.valueOf(data.getValue().getKey())));
+        lockValueCol.setCellValueFactory(data -> new SimpleStringProperty(String.valueOf(data.getValue().getValue())));
+        lockTableView.setItems(lockTableItems);
     }
 
     private void updateHeapTable(PrgState prgState) {
