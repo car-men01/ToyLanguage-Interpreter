@@ -1,6 +1,7 @@
 package gui;
 
 import controller.Controller;
+import exceptions.KeyNotFoundException;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,14 +9,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Pair;
-import model.adt.MyDictionary;
-import model.adt.MyHeap;
-import model.adt.MyList;
-import model.adt.MyStack;
+import model.adt.*;
+import model.expressions.ArithExp;
+import model.expressions.VarExp;
 import model.state.PrgState;
-import model.statements.IStmt;
+import model.statements.*;
+import model.types.IntType;
 import repository.IRepo;
 import repository.Repository;
+import java.util.Arrays;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -45,13 +47,39 @@ public class GUIController{
     private TableColumn<Pair<Integer, String>, String> heapAddressCol;
     @FXML
     private TableColumn<Pair<Integer, String>, String> heapValueCol;
+    @FXML
+    private TableView<Pair<String, String>> procTableView;
+    @FXML
+    private TableColumn<Pair<String, String>, String> procFunctionNameCol;
+    @FXML
+    private TableColumn<Pair<String, String>, String> procBodyCol;
 
     private Controller controller;
 
+    private MyIProc<String, Pair<List<String>, IStmt>> procTable = new MyProc<String, Pair<List<String>, IStmt>>();
 
     public void initializeExecution(IStmt program) {
+
+        IStmt f1 = new CompStmt(
+                new VarDeclStmt("v", new IntType()),
+                new CompStmt(
+                        new AssignStmt("v", new ArithExp(new VarExp("a"), new VarExp("b"), 1)),
+                        new PrintStmt(new VarExp("v"))
+                )
+        );
+        IStmt f2 = new CompStmt(
+                new VarDeclStmt("v", new IntType()),
+                new CompStmt(
+                        new AssignStmt("v", new ArithExp(new VarExp("a"), new VarExp("b"), 3)),
+                        new PrintStmt(new VarExp("v"))
+                )
+        );
+
+        procTable.insert("sum", new Pair<>(Arrays.asList("a", "b"), f1));
+        procTable.insert("product", new Pair<>(Arrays.asList("a", "b"), f2));
+
         PrgState initialPrgState = new PrgState(
-                new MyStack<>(), new MyDictionary<>(), new MyList<>(), program, new MyDictionary<>(), new MyHeap<>()
+                new MyStack<>(), new MyDictionary<>(), new MyList<>(), program, new MyDictionary<>(), new MyHeap<>(), procTable
         );
 
         String logFilePath = "D:\\UBB\\github_projects\\2nd-Year-Semester-1\\MAP\\ToyLanguageGUI\\write.out";
@@ -142,10 +170,69 @@ public class GUIController{
                 updateFileTable(selectedPrgState);
                 updateSymTable(selectedPrgState);
                 updateExeStack(selectedPrgState);
+                updateProcTable(selectedPrgState);
             }
         } catch (Exception e) {
             showError(e.getMessage());
         }
+    }
+
+    private void updateProcTable(PrgState prgState) {
+        //        ObservableList<Pair<String, String>> procedureTableItems = FXCollections.observableArrayList(
+        //                procedureTable.getContent().entrySet().stream()
+        //                        .map(entry -> {
+        //                            String functionName = entry.getKey();
+        //                            List<String> parameters = entry.getValue().getKey();
+        //                            IStmt functionBody = entry.getValue().getValue();
+        //
+        //                            // Format: functionName(param1, param2, ...)
+        //                            String signature = functionName + "(" + String.join(", ", parameters) + ")";
+        //
+        //                            // Convert function body to string representation
+        //                            String body = functionBody.toString();
+        //
+        //                            return new Pair<>(signature, body);
+        //                        })
+        //                        .collect(Collectors.toList())
+        //        );
+        //
+        //        // Bind Procedure Table columns
+        //        SignatureCol.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getKey()));
+        //        BodyCol.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getValue()));
+        //
+        //        ProcedureTableView.setItems(procedureTableItems);
+        //
+        // update th proc table view like in the above code but for it to work on my code
+
+        ObservableList<Pair<String, String>> procTableItems = FXCollections.observableArrayList(
+                prgState.getProcTable().getAddresses().stream()
+                        .map(address -> {
+                            Pair<List<String>, IStmt> proc = null;
+                            try {
+                                proc = procTable.getContent(address);
+                            } catch (KeyNotFoundException e) {
+                                throw new RuntimeException(e);
+                            }
+                            String functionName = address;
+                            List<String> parameters = proc.getKey();
+                            IStmt functionBody = proc.getValue();
+
+                            // Format: functionName(param1, param2, ...)
+                            String signature = functionName + "(" + String.join(", ", parameters) + ")";
+
+                            // Convert function body to string representation
+                            String body = functionBody.toString();
+
+                            return new Pair<>(signature, body);
+                        })
+                        .collect(Collectors.toList())
+        );
+
+        // Bind Procedure Table columns
+        procFunctionNameCol.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getKey()));
+        procBodyCol.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getValue()));
+
+        procTableView.setItems(procTableItems);
     }
 
     private void updateHeapTable(PrgState prgState) {

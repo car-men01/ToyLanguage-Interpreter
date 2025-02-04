@@ -42,4 +42,25 @@ public class MyStack<T> implements MyIStack<T> {
         return this.stack;
     }
 
+    @Override
+    public T peek() {
+        return this.stack.peek();
+    }
+
+    @Override
+    public MyStack<T> deepCopy() {
+        MyStack<T> newStack = new MyStack<>();
+        Stack<T> tempStack = new Stack<>();
+
+        while (!this.stack.empty())
+            tempStack.push(this.stack.pop());
+
+        while (!tempStack.isEmpty()) {
+            this.stack.push(tempStack.peek());
+            newStack.push(tempStack.pop());
+        }
+
+        return newStack;
+    }
+
 }

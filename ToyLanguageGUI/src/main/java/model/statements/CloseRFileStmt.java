@@ -12,7 +12,7 @@ import model.values.StringValue;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class CloseRFileStmt implements IStmt{
+public class    CloseRFileStmt implements IStmt{
     private IExp exp;
 
     public CloseRFileStmt(IExp exp) {

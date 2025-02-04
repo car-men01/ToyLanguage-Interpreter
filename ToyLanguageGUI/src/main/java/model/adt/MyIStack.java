@@ -10,4 +10,6 @@ public interface MyIStack<T> {
     boolean isEmpty();
     int size();
     Stack<T> getStack();
+    T peek();
+    MyStack<T> deepCopy();
 }

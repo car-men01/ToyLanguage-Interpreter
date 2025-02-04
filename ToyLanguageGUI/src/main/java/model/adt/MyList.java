@@ -25,4 +25,12 @@ public class MyList<T> implements MyIList<T>{
         }
         return s.toString();
     }
+
+    public int size() {
+        return this.list.size();
+    }
+
+    public T get(int index) {
+        return this.list.get(index);
+    }
 }

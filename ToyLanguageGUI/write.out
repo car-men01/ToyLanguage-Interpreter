@@ -11847,3 +11847,3417 @@ Heap:
 
 
 
+Program id: 1
+
+ExeStack:
+int v
+v = 2
+int w
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+v = 2
+int w
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; int v ; 
+
+SymTable:
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+v = 2
+int w
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; int v ; 
+
+SymTable:
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+v = 2
+int w
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+v = 2
+int w
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+int w
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; v = 2 ; 
+
+SymTable:
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+int w
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; v = 2 ; 
+
+SymTable:
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+int w
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+int w
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; int w ; 
+
+SymTable:
+v -> 2
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; int w ; 
+
+SymTable:
+v -> 2
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+w = 5
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; w = 5 ; 
+
+SymTable:
+v -> 2
+w -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; w = 5 ; 
+
+SymTable:
+v -> 2
+w -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+sum(v * 10, w, )
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; sum(v * 10, w, ) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; sum(v * 10, w, ) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; int v
+v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; int v
+v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; v = a + b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; v = a + b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; print(v) ; v = a + b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; print(v) ; v = a + b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 25
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 25
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 25
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 25
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+product(v, w, )
+fork {
+sum(v, w, )
+} ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+product(v, w, )
+fork {
+sum(v, w, )
+} ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+product(v, w, )
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; product(v, w, ) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; product(v, w, ) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; int v
+v = a * b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; int v
+v = a * b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; v = a * b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; v = a * b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; v = a * b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; v = a * b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; print(v) ; v = a * b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; print(v) ; v = a * b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 10
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 10
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 10
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 10
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w, )
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+sum(v, w, ) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+sum(v, w, ) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; int v
+v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; int v
+v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; v = a + b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; v = a + b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; print(v) ; v = a + b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; print(v) ; v = a + b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 7
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 7
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 7
+ ; 
+Out:
+25 2 10 7 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 7
+ ; 
+Out:
+25 2 10 7 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 7 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+int v
+v = 2
+int w
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+v = 2
+int w
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; int v ; 
+
+SymTable:
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+v = 2
+int w
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; int v ; 
+
+SymTable:
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+v = 2
+int w
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+v = 2
+int w
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+int w
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; v = 2 ; 
+
+SymTable:
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+int w
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; v = 2 ; 
+
+SymTable:
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+int w
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+int w
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; int w ; 
+
+SymTable:
+v -> 2
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; int w ; 
+
+SymTable:
+v -> 2
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+w = 5
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; w = 5 ; 
+
+SymTable:
+v -> 2
+w -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; w = 5 ; 
+
+SymTable:
+v -> 2
+w -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+sum(v * 10, w)
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; sum(v * 10, w) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; sum(v * 10, w) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; int v
+v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; int v
+v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; v = a + b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; v = a + b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; print(v) ; v = a + b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; print(v) ; v = a + b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 0
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 25
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 25
+ ; 
+Out:
+
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 25
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 20
+b -> 5
+v -> 25
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+print(v)
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+product(v, w)
+fork {
+sum(v, w)
+} ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+product(v, w)
+fork {
+sum(v, w)
+} ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+product(v, w)
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; product(v, w) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; product(v, w) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; int v
+v = a * b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; int v
+v = a * b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; v = a * b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; v = a * b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; v = a * b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; v = a * b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; print(v) ; v = a * b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; print(v) ; v = a * b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 10
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 10
+ ; 
+Out:
+25 2 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 10
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 10
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+fork {
+sum(v, w)
+} ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 1
+
+ExeStack:
+
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+sum(v, w) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+sum(v, w) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; int v
+v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; int v
+v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; v = a + b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; v = a + b
+print(v) ; int v ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; v = a + b
+print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; print(v) ; v = a + b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; print(v) ; v = a + b ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 0
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 7
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; print(v) ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 7
+ ; 
+Out:
+25 2 10 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 7
+ ; 
+Out:
+25 2 10 7 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+return ; 
+
+SymTable:
+v -> 2
+w -> 5
+ ; a -> 2
+b -> 5
+v -> 7
+ ; 
+Out:
+25 2 10 7 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
+Program id: 2
+
+ExeStack:
+
+
+SymTable:
+v -> 2
+w -> 5
+ ; 
+Out:
+25 2 10 7 
+
+FileTable:
+
+Heap:
+
+Proc Table:
+model.adt.MyProc@538848f8
+
+
